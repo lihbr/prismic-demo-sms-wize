@@ -1,8 +1,8 @@
-<!-- HEALTH:UNKNOWN __page__{{ kebabCase route }} -->
+<!-- HEALTH:UNKNOWN __page__home -->
 <template>
-  <div class="__page__{{ kebabCase route }}">
+  <div class="__page__home">
     <div class="content">
-      {{ pascalCase route }}
+      Home
     </div>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
     // Component
   },
   async asyncData(context) {
-    return await context.$pagePayload(context);
+    return { data: {} };
   },
   mounted() {
     this.$store.dispatch("pageChanged");
@@ -23,7 +23,7 @@ export default {
   head() {
     const { meta_title, meta_description, meta_image } = this.data;
     return this.$buildHead({
-      title: meta_title || "💐",
+      title: meta_title || "Home",
       description: meta_description,
       metaImage: {
         og: undefined /* meta_image.url */,
@@ -36,5 +36,5 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-// .__page__{{ kebabCase route }}
+// .__page__home
 </style>

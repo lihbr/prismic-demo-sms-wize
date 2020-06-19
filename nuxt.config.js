@@ -15,11 +15,6 @@ module.exports = async () => {
     mode: "universal",
 
     /*
-     ** Application directory
-     */
-    srcDir: "src/",
-
-    /*
      ** Head of the page, handled by head module
      */
     head: {
@@ -40,7 +35,7 @@ module.exports = async () => {
     /*
      ** Global CSS
      */
-    css: ["~/assets/sass/style.sass"],
+    css: ["normalize.css", "~/assets/sass/style.sass"],
 
     /*
      ** Plugins to load before mounting the App
@@ -57,7 +52,6 @@ module.exports = async () => {
      */
     buildModules: [
       "@nuxtjs/eslint-module",
-      "~/modules/build",
       [
         "~/modules/head",
         {
@@ -75,9 +69,6 @@ module.exports = async () => {
           url: env.APP_URL
         }
       ],
-      "~/modules/cache",
-      "~/modules/statistics",
-      "~/modules/tailwindcss",
       "@nuxtjs/global-components",
       "@nuxtjs/style-resources",
       "@nuxtjs/sitemap",
@@ -168,6 +159,25 @@ module.exports = async () => {
     server: {
       host: env.APP_HOST,
       port: env.APP_PORT
+    },
+
+    /*
+     ** Build
+     */
+    build: {
+      extractCSS: !env.DEV,
+      loaders: {
+        sass: {
+          implementation: require("sass"),
+          fiber: require("fibers")
+        }
+      },
+      html: {
+        minify: {
+          minifyCSS: false,
+          minifyJS: false
+        }
+      }
     }
   };
 };

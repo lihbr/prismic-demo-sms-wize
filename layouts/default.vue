@@ -1,6 +1,6 @@
-<!-- HEALTH:UNKNOWN __layout__{{ kebabCase name }} -->
+<!-- HEALTH:UNKNOWN __layout__default -->
 <template>
-  <div class="__layout__{{ kebabCase name }}">
+  <div class="__layout__default">
     <main class="main">
       <nuxt />
     </main>
@@ -55,7 +55,9 @@ export default {
 
 <style lang="sass">
 html
-  @apply font-main text-black bg-white
+  font-family: $fontMain
+  color: $black
+  background: $white
   font-size: 16px // don't change this!
   word-spacing: 1px
   -ms-text-size-adjust: 100%
