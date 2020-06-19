@@ -111,7 +111,22 @@ module.exports = async () => {
           }
         }
       ],
-      "nuxt-svg-loader"
+      "nuxt-svg-loader",
+      [
+        "@nuxtjs/prismic",
+        {
+          endpoint: "https://200619-misc-sms-wize.prismic.io/api/v2",
+          apiOptions: {
+            routes: [
+              {
+                type: "page",
+                path: "/:uid"
+              }
+            ]
+          }
+        }
+      ],
+      "nuxt-sm"
     ],
 
     /*
