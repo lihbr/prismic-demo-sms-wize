@@ -1,1 +1,4 @@
-{"libraries":["@/slices","vue-essential-slices"],"apiEndpoint":"https://200619-misc-sms-wize.cdn.prismic.io/api/v2"}
+{
+  "libraries": ["@/slices"],
+  "apiEndpoint": "https://200619-misc-sms-wize.cdn.prismic.io/api/v2"
+}

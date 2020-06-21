@@ -5,14 +5,16 @@ module.exports = async () => {
   // Configure application environment
   const env = envConfig(/* settings, CMS_GLOBAL */);
 
-  // Script
-  const script = [];
-
   return {
     /*
      ** Application mode
      */
     mode: "universal",
+
+    /*
+     ** Application target
+     */
+    target: "static",
 
     /*
      ** Head of the page, handled by head module
@@ -35,7 +37,7 @@ module.exports = async () => {
     /*
      ** Global CSS
      */
-    css: ["normalize.css", "~/assets/sass/style.sass"],
+    css: ["~/assets/sass/style.sass"],
 
     /*
      ** Plugins to load before mounting the App
@@ -72,7 +74,6 @@ module.exports = async () => {
       "@nuxtjs/global-components",
       "@nuxtjs/style-resources",
       "@nuxtjs/sitemap",
-      "@nuxtjs/feed",
       ["@nuxtjs/netlify-files", { existingFilesDirectory: __dirname }],
       [
         "@nuxtjs/gtm",
@@ -81,7 +82,7 @@ module.exports = async () => {
           pageTracking: true,
           pageViewEventName: "nuxtRoute",
           respectDoNotTrack: env.GTM_FRIENDLY,
-          dev: env.GTM_DEV
+          enabled: !env.DEV
         }
       ],
       [
@@ -112,6 +113,7 @@ module.exports = async () => {
         }
       ],
       "nuxt-svg-loader",
+      ["@nuxtjs/tailwindcss", { cssPath: "~/assets/sass/style.sass" }],
       [
         "@nuxtjs/prismic",
         {
@@ -137,16 +139,11 @@ module.exports = async () => {
     },
 
     /*
-     ** Generate
+     ** Export
      */
-    generate: {
+    export: {
       fallback: true,
-      routes: [
-        {
-          route: "/",
-          payload: {}
-        }
-      ]
+      crawler: true
     },
 
     /*
@@ -157,11 +154,6 @@ module.exports = async () => {
       gzip: true,
       exclude: []
     },
-
-    /*
-     ** Feed
-     */
-    feed: [],
 
     /*
      ** Env

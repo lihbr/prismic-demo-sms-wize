@@ -1,6 +1,6 @@
-# template-vue-nuxt
+# misc-sms-wize
 
-A Nuxt.js starter pack to build app with Vue.js
+Rebuilding Wize with [Slice Machine](https://slicemachine.dev)
 
 <!-- Place badges here -->
 
