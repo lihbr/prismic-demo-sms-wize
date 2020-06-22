@@ -2,32 +2,44 @@
 <template>
   <div class="__page__home">
     <div class="content">
-      Home
+      <container>
+        <slice-zone
+          :slices="data.body"
+          class="flex flex-wrap justify-between"
+        />
+      </container>
     </div>
   </div>
 </template>
 
 <script>
-// import Component from "~/components/Component.vue";
+import SliceZone from "vue-slicezone";
 
 export default {
   components: {
-    // Component
+    SliceZone
   },
   async asyncData(context) {
-    return { data: {} };
+    const data = (await context.$prismic.api.getByUID("page", "home")).data;
+    console.log(data.body[2]);
+
+    return { data };
   },
   mounted() {
     this.$store.dispatch("pageChanged");
   },
   head() {
-    const { meta_title, meta_description, meta_image } = this.data;
+    const { meta_title, meta_description, social_cards } = this.data;
     return this.$buildHead({
       title: meta_title || "Home",
       description: meta_description,
       metaImage: {
-        og: undefined /* meta_image.url */,
-        tw: undefined /* meta_image.twitter_variant.url */
+        og: social_cards.length
+          ? social_cards[0].social_card_image.url
+          : undefined,
+        tw: social_cards.length
+          ? social_cards[0].social_card_image.url
+          : undefined
       },
       path: this.$route.path
     });

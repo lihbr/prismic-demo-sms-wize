@@ -1,6 +1,7 @@
 <!-- HEALTH:UNKNOWN __layout__default -->
 <template>
   <div class="__layout__default">
+    <app-header />
     <main class="main">
       <nuxt />
     </main>
@@ -10,7 +11,12 @@
 <script>
 import objectFitImages from "object-fit-images";
 
+import AppHeader from "~/components/partials/header/Header.vue";
+
 export default {
+  components: {
+    AppHeader
+  },
   computed: {
     detect() {
       return this.$store.state.detect;
@@ -55,7 +61,6 @@ export default {
 
 <style lang="sass">
 html
-  @apply font-main text-black bg-white
   font-size: 16px // don't change this!
   word-spacing: 1px
   -ms-text-size-adjust: 100%
@@ -63,4 +68,5 @@ html
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
   box-sizing: border-box
+  @apply font-main font-medium text-navy bg-cream
 </style>

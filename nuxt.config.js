@@ -1,5 +1,4 @@
 const { envConfig } = require("./env.config");
-const logger = require("consola").withScope("nuxt");
 
 module.exports = async () => {
   // Configure application environment
@@ -19,15 +18,7 @@ module.exports = async () => {
     /*
      ** Head of the page, handled by head module
      */
-    head: {
-      link: [
-        {
-          rel: "stylesheet",
-          href:
-            "https://fonts.googleapis.com/css?family=Roboto:300,400,700,300italic&display=fallback"
-        }
-      ]
-    },
+    head: {},
 
     /*
      ** Customize the progress-bar color
@@ -184,7 +175,8 @@ module.exports = async () => {
           minifyCSS: false,
           minifyJS: false
         }
-      }
+      },
+      transpile: ["vue-slicezone"]
     }
   };
 };

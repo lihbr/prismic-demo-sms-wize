@@ -1,1 +1,18 @@
 // Global typography style belong to this file
+.heading-h1
+  +fontsize(30)
+  letter-spacing: -0.04em
+  line-height: 1.1
+
+  @screen lg
+    +fontsize(54)
+    line-height: 1.05
+
+.heading-h3
+  +fontsize(24)
+  letter-spacing: -0.025em
+  @apply leading-snug
+
+  @screen lg
+    +fontsize(32)
+    line-height: 1.2
