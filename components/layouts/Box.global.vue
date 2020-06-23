@@ -1,6 +1,6 @@
-<!-- HEALTH:UNKNOWN layout-block -->
+<!-- HEALTH:UNKNOWN layout-box -->
 <template>
-  <div class="layoutBlock">
+  <div class="layoutBox">
     <slot />
   </div>
 </template>
@@ -10,9 +10,8 @@ export default {};
 </script>
 
 <style lang="sass" scoped>
-.layoutBlock
+.layoutBox
   border-radius: 10px
-  @apply overflow-hidden
 
   @screen md
     min-height: 100%

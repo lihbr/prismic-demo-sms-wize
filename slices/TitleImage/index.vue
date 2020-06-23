@@ -2,7 +2,7 @@
 <!-- TODO: Refactor into smaller components -->
 <template>
   <div
-    class="titleImage flex justify-between"
+    class="titleImage md:flex md:justify-between"
     :class="{ 'md:flex-row-reverse': isInverted }"
   >
     <box class="titleSection flex flex-col justify-center">
@@ -70,7 +70,10 @@ export default {
     margin-bottom: 30px
 
   .titleSection
+    margin-bottom: 20px
+
     @screen md
+      margin-bottom: 0
       padding: 0 25px
 
     @screen lg
