@@ -14,7 +14,7 @@
         <header-links :links="menu.header_links_right" class="hidden lg:flex" />
         <a
           href="https://www.waze.com/en-GB/signin"
-          class="hidden lg:inline-block button mx-8"
+          class="hidden lg:inline-block button"
         >
           Log In
         </a>
@@ -66,6 +66,7 @@ export default {
       margin: 0 30px
 
   .button
+    margin: 0 35px
     padding: 7px 18px
     @apply text-base bg-navy text-white rounded-full h-8 font-bold
 

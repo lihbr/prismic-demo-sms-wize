@@ -1,4 +1,5 @@
 <!-- HEALTH:UNKNOWN title-image -->
+<!-- TODO: Refactor into smaller components -->
 <template>
   <div
     class="titleImage flex justify-between"
