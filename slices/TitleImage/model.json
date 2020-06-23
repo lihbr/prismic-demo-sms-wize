@@ -1,0 +1,56 @@
+{
+  "type": "Slice",
+  "fieldset": "Title Image",
+  "description": "Title with CTA and image",
+  "icon": "art_track",
+  "display": "list",
+  "non-repeat": {
+    "brow": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading3",
+        "label": "Brow"
+      }
+    },
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1, heading2",
+        "label": "Title"
+      }
+    },
+    "image": {
+      "type": "Image",
+      "config": {
+        "constraint": {
+          "height": 800
+        },
+        "thumbnails": [],
+        "label": "Image"
+      }
+    }
+  },
+  "repeat": {
+    "link": {
+      "type": "Link",
+      "config": {
+        "allowTargetBlank": true,
+        "label": "Link"
+      }
+    },
+    "title": {
+      "type": "Text",
+      "config": {
+        "label": "Title"
+      }
+    },
+    "style": {
+      "type": "Select",
+      "config": {
+        "options": ["Filled", "Outlined"],
+        "default_value": "Filled",
+        "label": "Style"
+      }
+    }
+  }
+}

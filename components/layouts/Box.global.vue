@@ -12,7 +12,7 @@ export default {};
 <style lang="sass" scoped>
 .layoutBlock
   border-radius: 10px
-  margin-bottom: 30px
+  @apply overflow-hidden
 
   @screen md
     min-height: 100%
