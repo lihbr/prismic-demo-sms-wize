@@ -21,7 +21,6 @@ export default {
   },
   async asyncData(context) {
     const data = (await context.$prismic.api.getByUID("page", "home")).data;
-    console.log(data.body[2]);
 
     return { data };
   },
@@ -29,17 +28,13 @@ export default {
     this.$store.dispatch("pageChanged");
   },
   head() {
-    const { meta_title, meta_description, social_cards } = this.data;
+    const { meta_title, meta_description, meta_image } = this.data;
     return this.$buildHead({
-      title: meta_title || "Home",
+      title: meta_title || "💐",
       description: meta_description,
       metaImage: {
-        og: social_cards.length
-          ? social_cards[0].social_card_image.url
-          : undefined,
-        tw: social_cards.length
-          ? social_cards[0].social_card_image.url
-          : undefined
+        og: meta_image.url,
+        tw: meta_image.twitter_variant.url
       },
       path: this.$route.path
     });
