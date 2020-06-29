@@ -1,4 +1,4 @@
-# misc-sms-wize
+# sms-wize
 
 Wize with [Slice Machine](https://slicemachine.dev)
 
