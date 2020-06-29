@@ -1,5 +1,5 @@
 {
-  "name": "misc-sms-wize",
+  "name": "sms-wize",
   "version": "2.5.0",
   "description": "Wize with Slice Machine",
   "private": true,
