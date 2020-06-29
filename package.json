@@ -1,7 +1,7 @@
 {
   "name": "misc-sms-wize",
   "version": "2.5.0",
-  "description": "Rebuilding Wize with Slice Machine",
+  "description": "Wize with Slice Machine",
   "private": true,
   "author": "lihbr <hello@lihbr.com> (https://lihbr.com)",
   "license": "SEE LICENSE IN LICENSE",

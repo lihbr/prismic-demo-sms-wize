@@ -1,6 +1,6 @@
 # misc-sms-wize
 
-Rebuilding Wize with [Slice Machine](https://slicemachine.dev)
+Wize with [Slice Machine](https://slicemachine.dev)
 
 <!-- Place badges here -->
 
